@@ -1,0 +1,94 @@
+{
+  players : [
+{
+  "playerID": "Joel",
+  "wins": 24,
+  "chat": "&osol;",
+  "join": "&#9658;"
+},
+{
+  "playerID": "Winston",
+  "wins": 12,
+  "chat": "&check;",
+  "join": "&#9658;"
+},
+{
+  "playerID": "Armando",
+  "wins": 32,
+  "chat": "&osol;",
+  "join": "&osol;"
+},
+{
+  "playerID": "Nicholas",
+  "wins": 23,
+  "chat": "&osol;",
+  "join": "&osol;"
+},
+{
+  "playerID": "Lynda",
+  "wins": 27,
+  "chat": "&check;",
+  "join": "&#9658;"
+},
+{
+  "playerID": "Marvin",
+  "wins": 14,
+  "chat": "&check;",
+  "join": "&#9658;"
+},
+{
+  "playerID": "Leslie",
+  "wins": 20,
+  "chat": "&osol;",
+  "join": "&osol;"
+},
+{
+  "playerID": "Nicole",
+  "wins": 13,
+  "chat": "&check;",
+  "join": "&osol;"
+},
+{
+  "playerID": "Gregg",
+  "wins": 10,
+  "chat": "&osol;",
+  "join": "&osol;"
+},
+{
+  "playerID": "Brett",
+  "wins": 25,
+  "chat": "&osol;",
+  "join": "&#9658;"
+},
+{
+  "playerID": "Michael",
+  "wins": 26,
+  "chat": "&check;",
+  "join": "&#9658;"
+},
+{
+  "playerID": "Victor",
+  "wins": 9,
+  "chat": "&check;",
+  "join": "&osol;"
+},
+{
+  "playerID": "Kent",
+  "wins": 32,
+  "chat": "&check;",
+  "join": "&osol;"
+},
+{
+  "playerID": "Dolores",
+  "wins": 22,
+  "chat": "&osol;",
+  "join": "&#9658;"
+},
+{
+  "playerID": "Ray",
+  "wins": 40,
+  "chat": "&osol;",
+  "join": "&osol;"
+}
+  ]
+}

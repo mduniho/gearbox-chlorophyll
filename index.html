@@ -1,0 +1,256 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="assets/styles/global.css">
+    <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/styles/jquery.dataTables.min.css" media="screen" />
+
+    <script type="text/javascript" src="assets/js/jquery-1.12.4.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.dataTables.min.js"></script>
+    <script>
+    $(document).ready(
+      function() {
+          $(".hamburger").click(function() {
+              $(".nav-mobile").fadeToggle();
+          });
+      });
+
+      $(window).resize(setDivVisibility);
+      function setDivVisibility(){
+           if (($(window).width()) > '573'){
+             $(".nav-mobile").css({ display: "none" });
+           }
+       }
+
+    /* Data imported from players.json */
+
+    $(document).ready(function (){
+        var json = {
+          players : [
+        {
+    		  "playerID": "Joel",
+    		  "wins": 24,
+    		  "chat": "&osol;",
+    		  "join": "&#9658;"
+    		},
+    		{
+    		  "playerID": "Winston",
+    		  "wins": 12,
+    		  "chat": "&check;",
+    		  "join": "&#9658;"
+    		},
+    		{
+    		  "playerID": "Armando",
+    		  "wins": 32,
+    		  "chat": "&osol;",
+    		  "join": "&osol;"
+    		},
+    		{
+    		  "playerID": "Nicholas",
+    		  "wins": 23,
+    		  "chat": "&osol;",
+    		  "join": "&osol;"
+    		},
+    		{
+    		  "playerID": "Lynda",
+    		  "wins": 27,
+    		  "chat": "&check;",
+    		  "join": "&#9658;"
+    		},
+    		{
+    		  "playerID": "Marvin",
+    		  "wins": 14,
+    		  "chat": "&check;",
+    		  "join": "&#9658;"
+    		},
+    		{
+    		  "playerID": "Leslie",
+    		  "wins": 20,
+    		  "chat": "&osol;",
+    		  "join": "&osol;"
+    		},
+    		{
+    		  "playerID": "Nicole",
+    		  "wins": 13,
+    		  "chat": "&check;",
+    		  "join": "&osol;"
+    		},
+    		{
+    		  "playerID": "Gregg",
+    		  "wins": 10,
+    		  "chat": "&osol;",
+    		  "join": "&osol;"
+    		},
+    		{
+    		  "playerID": "Brett",
+    		  "wins": 25,
+    		  "chat": "&osol;",
+    		  "join": "&#9658;"
+    		},
+    		{
+    		  "playerID": "Michael",
+    		  "wins": 26,
+    		  "chat": "&check;",
+    		  "join": "&#9658;"
+    		},
+    		{
+    		  "playerID": "Victor",
+    		  "wins": 9,
+    		  "chat": "&check;",
+    		  "join": "&osol;"
+    		},
+    		{
+    		  "playerID": "Kent",
+    		  "wins": 32,
+    		  "chat": "&check;",
+    		  "join": "&osol;"
+    		},
+    		{
+    		  "playerID": "Dolores",
+    		  "wins": 22,
+    		  "chat": "&osol;",
+    		  "join": "&#9658;"
+    		},
+    		{
+    		  "playerID": "Ray",
+    		  "wins": 40,
+    		  "chat": "&osol;",
+    		  "join": "&osol;"
+    		}
+          ]
+        };
+
+        var data = jQuery.map(json.players, function(el, i) {
+          return [[el.playerID, el.wins, el.chat, el.join]];
+        });
+
+        $('#stats').dataTable( {
+          "aaData": data,
+          columns: [
+    			{ title: "Player ID" },
+    			{ title: "Win %" },
+    			{ title: "Chat" },
+    			{ title: "Join Game" }
+    		],
+
+    		/* Requested department filter */
+    		"columnDefs": [
+    			{ type: "department", targets: 0 }
+    		]
+    	});
+    });
+
+    /*  MICAH NOTES:  If we were server-side or running a local server, this method below would work to load the JSON file provided.  Datatables uses the property "ajax" to load the $.getJSON() function.
+
+    $(document).ready(function() {
+        $('#example').DataTable( {
+            ajax: "players.json",
+            columns: [
+                { title: "First Name" },
+                { title: "Wins" },
+                { title: "chat" },
+                { title: "Win Percentage" }
+            ]
+        } );
+    } );
+
+    */
+
+    </script>
+
+  </head>
+  <body>
+    <div id="container">
+      <div id="header">
+        <div class="logo"><a href="#"><img src="assets/images/logo.png" border="0" class="logo-position"></a>
+        </div>
+        <div class="social">
+          <div>
+            <ul class="social-nav">
+              <li class="social-nav-li"><a href="#">register</a></li>
+              <li class="social-nav-li"><a href="#">login</a></li>
+              <li class="social-nav-li"><a href="#">language</a></li>
+            </ul>
+          </div>
+          <div>
+            <ul class="social-nav">
+              <li class="social-nav-li"><a href="#"><img src="assets/images/facebook.png" border="0"></a></li>
+              <li class="social-nav-li"><a href="#"><img src="assets/images/twitter.png" border="0"></a></li>
+              <li class="social-nav-li"><a href="#"><img src="assets/images/instagram.png" border="0"></a></li>
+              <li class="social-nav-li"><a href="#"><img src="assets/images/youtube.png" border="0"></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="nav">
+          <ul class="main-nav">
+            <li class="main-nav-li"><a href="#">GAMES</a></li>
+            <li class="main-nav-li"><a href="#">THE NURSERY</a></li>
+            <li class="main-nav-li"><a href="#">COMPANY</a></li>
+            <li class="main-nav-li"><a href="#">SUPPORT</a></li>
+          </ul>
+        </div>
+        <div class="nav-mobile">
+          <ul class="main-nav-mobile">
+            <li class="main-nav-li-mobile"><a href="#" class="mainnav-mobile">GAMES</a></li>
+            <li class="main-nav-li-mobile"><a href="#" class="mainnav-mobile">THE NURSERY</a></li>
+            <li class="main-nav-li-mobile"><a href="#" class="mainnav-mobile">COMPANY</a></li>
+            <li class="main-nav-li-mobile"><a href="#" class="mainnav-mobile">SUPPORT</a></li>
+          </ul>
+        </div>
+        <div class="vine"><img src="assets/images/vine.png" border="0"></div>
+        <div class="hamburger"><a href="#" onclick=""><img src="assets/images/hamburger.png" border="0"></div>
+      </div>
+      <div id="content">
+        <div class="content-container">
+          <h1>The Nursery</h1>
+          <p>You can play with your friends in a game they're already playing! As long as your friend has the join in-game setting enabled, you will be able to join them in a game with a click of a button.</p>
+          <ul>
+            <li>Search for the user's Player ID, or go to their Profile page</li>
+            <li>If that user is currently in a game and is allowing people to follow them, a Join Game option will appear on the search results</li>
+            <li>Click the Join Game icon, and you will be placed into the game with them!</li>
+          </ul>
+          <table id="stats" class="display" cellspacing="0" width="100%"></table>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+    </div>
+    <footer id="footer">
+      <div class="footer-content">
+        <div class="social-mobile">
+          <div class="social-footer">
+            <ul class="social-nav">
+              <li class="social-nav-li"><a href="#">register</a></li>
+              <li class="social-nav-li"><a href="#">login</a></li>
+              <li class="social-nav-li"><a href="#">language</a></li>
+            </ul>
+          </div>
+          <div class="social-footer">
+            <ul class="social-nav">
+              <li class="social-nav-li"><a href="#"><img src="assets/images/facebook.png" border="0"></a></li>
+              <li class="social-nav-li"><a href="#"><img src="assets/images/twitter.png" border="0"></a></li>
+              <li class="social-nav-li"><a href="#"><img src="assets/images/instagram.png" border="0"></a></li>
+              <li class="social-nav-li"><a href="#"><img src="assets/images/youtube.png" border="0"></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="copyright">©2018 CHLOROPHYLL, INC.  ALL RIGHTS RESERVED.
+        </div>
+        <div class="footer-nav">
+          <ul class="footer-nav-menu">
+            <li class="footer-nav-li"><a href="#">EULA</a></li>
+            <li class="footer-nav-li"><a href="#">FORUMS</a></li>
+            <li class="footer-nav-li"><a href="#">PLAYTESTING</a></li>
+            <li class="footer-nav-li"><a href="#">PRESS RELEASES</a></li>
+            <li class="footer-nav-li"><a href="#">PUBLISHING</a></li>
+            <li class="footer-nav-li"><a href="#">PRIVACY</a></li>
+            <li class="footer-nav-li"><a href="#">TOS</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>
